@@ -1,0 +1,13 @@
+
+.nav {
+  grid-area: nav;
+  background-color: blueviolet;
+}
+
+.item {
+  font-size: 24px;
+  font-weight: bold;
+  padding-left: 30px;
+  padding-top: 30px;
+  color: white;
+}
