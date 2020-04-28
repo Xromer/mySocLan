@@ -2,6 +2,7 @@
 .nav {
   grid-area: nav;
   background-color: blueviolet;
+  height: 100vh;
 }
 
 .item {
@@ -10,4 +11,14 @@
   padding-left: 30px;
   padding-top: 30px;
   color: white;
+}
+
+.item a{
+  color:white;
+  text-decoration: none;
+}
+
+.item a.active{
+  color: gold;
+  
 }
