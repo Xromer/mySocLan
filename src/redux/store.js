@@ -15,7 +15,7 @@ export const UPDATE_NEW_POST_TEXTActionCreator = (text) => ({ type: UPDATE_NEW_P
 export const ADD_MESSAGEActionCreator = () => ({ type: ADD_MESSAGE });
 
 export const UPDATE_NEW_MESSAGE_TEXTActionCreator = (text) => ({ type: UPDATE_NEW_MESSAGE_TEXT, newText: text });*/
-
+let test = () => { };
 
 let store = {
 
