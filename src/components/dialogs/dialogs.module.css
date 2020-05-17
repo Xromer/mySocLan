@@ -1,5 +1,41 @@
-.dialog {
+.dialogs {
   grid-area: content;
-  background-color: aqua;
+  background:url("https://bipbap.ru/wp-content/uploads/2017/05/01101425.jpg");
+  display:grid;
+  grid-template-columns: 2fr 10fr;
+  
 }
+
+.dialog{
+  
+}
+
+.dialogsItems{  
+  line-height: 10px;
+  margin: 0px;
+  padding-left: 10px;
+  color:white;
+}
+
+
+.dialogsItems .active{
+  color:gold;
+}
+
+.dialogsItems a {
+  color:white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.messages{  
+  text-decoration: none;
+  color: white;
+}
+
+textarea{
+  margin-top: 10px;
+}
+
+
 

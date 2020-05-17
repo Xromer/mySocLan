@@ -1,5 +1,11 @@
 .content {
   grid-area: content;
   background-color: cadetblue;
+  text-align: center;
+  
+}
+
+.news {
+  font-size: 30px;
 }
 

@@ -6,7 +6,7 @@
 
 .content {
   grid-area: content;
-  background-color: cadetblue;
+  background-color: rgb(89, 96, 155);
 }
 
 .image {
@@ -17,8 +17,26 @@
 .logo2{
   width:200px;
   margin-left: 10px;
+  padding-top: 10px;
 }
 
 .item {
-  color: green;
+  color: rgb(10, 10, 10);
+}
+
+button{
+  background-color: blue;
+  color: white;
+}
+
+.postMenu{
+  padding-left: 10px;
+}
+
+.aboute_me{
+  padding-top: 10px ;
+}
+
+.inputPost{
+  
 }

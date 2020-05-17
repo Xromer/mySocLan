@@ -2,11 +2,14 @@ import React from 'react';
 import classes from './news.module.css';
 
 
-const News = () => {
+const News = (props) => {
+
+  let newsItem = props.news.news.map(n => <div>{n.news}</div>);
   return (
     <div className={classes.content}>
-      News
-
+      <div className="news">
+        {newsItem}
+      </div>
     </div>
   );
 }
