@@ -6,7 +6,7 @@ import './index.css';
 import App from './App';
 
 
-
+let st = () =>{};
 
 let renderEntireTree = () => {
     ReactDOM.render(
