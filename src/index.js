@@ -6,7 +6,7 @@ import './index.css';
 import App from './App';
 
 
-let stt = () =>{};
+let stt = (krot) =>{};
 
 let renderEntireTree = () => {
     ReactDOM.render(
