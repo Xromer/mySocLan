@@ -1,23 +1,23 @@
 import React from 'react';
 import style from './../dialogs.module.css';
-import { UPDATE_NEW_MESSAGE_TEXTActionCreator, ADD_MESSAGEActionCreator } from '../../../redux/dialogs-reducer';
+
 
 
 const Messages = (props) => {
 
-    let MessagesElement = props.messages.map(m => <div> {m.message}</div>);
+    let MessagesElement = props.dialogsPage.messages.map(m => <div> {m.message}</div>);
 
     //let nMessageElement = React.createRef();убрана за ненадобностью введена новая функция target
 
     let addMessage = () => {
-        props.dispatch(ADD_MESSAGEActionCreator());
+        props.sendMessage();
     }
 
 
 
     let onMessageChange = (e) => {
         let text = e.target.value;
-        props.dispatch(UPDATE_NEW_MESSAGE_TEXTActionCreator(text));
+        props.updateNewMessageText(text);
 
     }
 
