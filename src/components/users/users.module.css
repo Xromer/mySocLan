@@ -1,0 +1,45 @@
+.cont{
+    display: grid;
+    grid-template-areas:
+    "photo data"
+    "but data";
+    grid-template-columns: 0.5fr 4fr;
+    margin: 10px;
+}
+
+.photo{
+    grid-area: photo;
+}
+
+.photo img{
+    width: 70px;
+    height: 70px;
+}
+
+.but{
+    grid-area: but;
+}
+
+.data{
+    background-color: burlywood;
+    display: grid;
+    grid-template-areas:
+    "name coun"
+    "st city"; 
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.name{
+    grid-area:name;
+}
+.country{
+    grid-area:coun;
+}
+.status{
+    grid-area:st;
+}
+.city{
+    grid-area:city;
+}

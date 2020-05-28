@@ -6,8 +6,9 @@ import Profile from './components/profile/Profile';
 import Dialogs from './components/dialogs/dialogs.js';
 import Music from './components/music/music.js';
 import Settings from './components/settings/settings.js';
-import News from './components/news/news.js';
 import { Route, BrowserRouter } from "react-router-dom";
+import NewsContainer from './components/news/newsContainer';
+import UsersContainer from './components/users/usersContainer';
 
 
 const App = (props) => {
@@ -26,7 +27,8 @@ const App = (props) => {
         {/*content*/}
         <Route path="/dialogs" render={() => <Dialogs />} />
         <Route path="/profile" render={() => <Profile />} />
-        <Route path="/news" component={() => <News news={props.state.newsPage} />} />
+        <Route path="/news" component={() => <NewsContainer />} />
+        <Route path="/users" component={() => <UsersContainer />} />
         <Route path="/music" component={Music} />
         <Route path="/settings" component={Settings} />
 

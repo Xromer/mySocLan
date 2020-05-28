@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Dialog from "./Dialog";
 import { connect } from "react-redux";
 
