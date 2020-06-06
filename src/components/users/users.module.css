@@ -43,3 +43,7 @@
 .city{
     grid-area:city;
 }
+
+.selectedPage{
+    font-weight: bold;
+}
