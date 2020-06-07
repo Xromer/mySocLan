@@ -18,7 +18,7 @@ export const setUsersTotalCountAC = (totalCount) => ({ type: SET_TOTAL_USERS_COU
 let initialState = {
     users: [],
     pageSize: 100, //количество пользователей на странице
-    totalUsersCount: 20, //общее количество пользователей на сервере
+    totalUsersCount: 0, //общее количество пользователей на сервере
     currentPage: 1
 };
 
