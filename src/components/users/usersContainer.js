@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import UsersAPIComponent from './usersAPIComponent';
 import { followAC, unfollowAC, setUsersAC, setCurrentPageAC, setUsersTotalCountAC } from '../../redux/users-reducer';
 import * as axios from 'axios';
 import Users from './users';
-import React from 'react';
+
 
 
 class UsersContainer extends React.Component {
@@ -41,7 +40,7 @@ class UsersContainer extends React.Component {
     }
 }
 
-export default UsersContainer;
+//export default UsersContainer;
 
 let mapStateToProps = (state) => {
     return {
@@ -74,4 +73,4 @@ let mapDispatchToProps = (dispatch) => {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);;
+export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);

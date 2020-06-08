@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './users.module.css'
 
 let Users = (props) => {
 
@@ -10,8 +11,7 @@ let Users = (props) => {
         pages.push(i);
     }
 
-    return
-    <div>
+    return <div>
 
         <div>
 
