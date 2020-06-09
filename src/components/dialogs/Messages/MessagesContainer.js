@@ -8,7 +8,7 @@ import store from '../../../redux/redux-store';
 
 
 const MessangersConteainer = (props) => {
-    debugger;
+
 
     let newMessageText = store.getState().dialogsPage;
 

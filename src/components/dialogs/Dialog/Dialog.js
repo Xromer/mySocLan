@@ -8,8 +8,6 @@ import { NavLink } from 'react-router-dom';
 
 const Dialog = (props) => {
 
-    debugger;
-
 
     let DialogElement =
         props.dialogs.map(dialog => <NavLink to={"/dialogs/" + dialog.id} activeClassName={style.active}><div>{dialog.name}</div></NavLink>);

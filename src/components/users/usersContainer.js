@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { followAC, unfollowAC, setUsersAC, setCurrentPageAC, setUsersTotalCountAC } from '../../redux/users-reducer';
+import { follow, unfollow, setUsers, setCurrentPage, setUsersTotalCount } from '../../redux/users-reducer';
 import * as axios from 'axios';
 import Users from './users';
 
@@ -14,7 +14,7 @@ class UsersContainer extends React.Component {
 
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {
             this.props.setUsers(response.data.items);
-            this.props.setTotalUsersCount(response.data.totalCount);
+            this.props.setUsersTotalCount(response.data.totalCount);
 
         });
     }
@@ -51,7 +51,7 @@ let mapStateToProps = (state) => {
     }
 }
 
-let mapDispatchToProps = (dispatch) => {
+/*let mapDispatchToProps = (dispatch) => {
     return {
         follow: (usersId) => {
             dispatch(followAC(usersId))
@@ -70,7 +70,7 @@ let mapDispatchToProps = (dispatch) => {
             dispatch(setUsersTotalCountAC(totalCount))
         }
     }
-}
+}*/
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);
+//vmesto mapDispatchToProps bil peredan obekt s metodami
+export default connect(mapStateToProps, { follow, unfollow, setUsers, setCurrentPage, setUsersTotalCount })(UsersContainer);

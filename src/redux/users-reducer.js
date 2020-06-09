@@ -4,15 +4,15 @@ const SET_USERS = 'SET_USERS';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
 
-export const followAC = (id) => ({ type: FOLLOW, usersId: id });
+export const follow = (id) => ({ type: FOLLOW, usersId: id });
 
-export const unfollowAC = (id) => ({ type: UNFOLLOW, usersId: id });
+export const unfollow = (id) => ({ type: UNFOLLOW, usersId: id });
 
-export const setUsersAC = (users) => ({ type: SET_USERS, usersId: users });
+export const setUsers = (users) => ({ type: SET_USERS, usersId: users });
 
-export const setCurrentPageAC = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage });
+export const setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage });
 
-export const setUsersTotalCountAC = (totalCount) => ({ type: SET_TOTAL_USERS_COUNT, count: totalCount });
+export const setUsersTotalCount = (totalCount) => ({ type: SET_TOTAL_USERS_COUNT, count: totalCount });
 
 
 let initialState = {
