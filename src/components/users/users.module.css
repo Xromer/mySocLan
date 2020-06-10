@@ -26,6 +26,7 @@
     grid-template-areas:
     "name coun"
     "st city"; 
+    width: 100%;
     border: 1px solid black;
     border-radius: 30px;
     padding: 10px;
@@ -46,4 +47,11 @@
 
 .selectedPage{
     font-weight: bold;
+    border: 1 solid black;
+    background-color: aquamarine;
+    padding-left: 1px;
+    
+    padding-top: 0px;
+    margin: 0 auto;
 }
+

@@ -1,5 +1,6 @@
 import React from 'react';
-import styles from './users.module.css'
+import styles from './users.module.css';
+import { NavLink } from 'react-router-dom';
 
 let Users = (props) => {
 
@@ -9,7 +10,10 @@ let Users = (props) => {
 
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
-    }
+    };
+
+
+
 
     return <div>
 
@@ -21,11 +25,12 @@ let Users = (props) => {
             })}
 
         </div>
-
         {
             props.users.map(u => <div key={u.id} className={styles.cont}>
                 <div className={styles.photo}>
-                    <img src={u.photos.small != null ? u.photos.small : "https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png"} />
+                    <NavLink to={"/profile/" + u.id}>
+                        <img src={u.photos.small != null ? u.photos.small : "https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png"} />
+                    </NavLink>
                 </div>
                 <div className={styles.but}>
                     {u.followed
@@ -33,6 +38,7 @@ let Users = (props) => {
                         : <button onClick={() => { props.follow(u.id) }}>unfollow</button>}
                 </div>
                 <div className={styles.data}>
+
                     <div className={styles.name}>{u.name}</div>
                     <div className={styles.status}>{u.status}</div>
                     <div className={styles.country}>"u.location.country"</div>
@@ -43,5 +49,6 @@ let Users = (props) => {
         }
     </div>
 }
+
 
 export default Users;

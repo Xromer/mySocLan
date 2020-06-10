@@ -1,11 +1,17 @@
 import React from 'react';
 import classes from './../Profile.module.css';
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+
+    if (!props.profile) {
+        return <div>Fuck</div>
+    }
+
+
     return (
         <div className={classes.profile}>
             <div className={classes.myphoto}>
-                <img className={classes.logo2} src="https://logopond.com/logos/b7b61dcf7874fe5b8e97f9b00501a6ca.png" />
+                <img className={classes.logo2} src={props.profile.photos.large} />
             </div>
             <div className={classes.aboute_me}>
                 Opisanie
