@@ -9,7 +9,7 @@ const Profile = (props) => {
   {/*props: posts = props.state.profilePage
    props: addPost = function addPost  */}
 
-  debugger;
+
   return (
     <div className={classes.content}>
       <ProfileInfo profile={props.profile} />

@@ -1,8 +1,6 @@
 import React from 'react';
 import './App.css';
-import Header from './components/header/header';
 import Nav from './components/nav/nav';
-import Profile from './components/profile/Profile';
 import Dialogs from './components/dialogs/dialogs.js';
 import Music from './components/music/music.js';
 import Settings from './components/settings/settings.js';
@@ -10,6 +8,7 @@ import { Route, BrowserRouter } from "react-router-dom";
 import NewsContainer from './components/news/newsContainer';
 import UsersContainer from './components/users/usersContainer';
 import ProfileContainer from './components/profile/profileContainer';
+import HeaderContainer from './components/header/headerContainer';
 
 
 const App = (props) => {
@@ -20,7 +19,7 @@ const App = (props) => {
       <div className='app-wrapper'>
 
         {/*header*/}
-        <Header />
+        <HeaderContainer />
 
         {/*nav*/}
         <Nav />
