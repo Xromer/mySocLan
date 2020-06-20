@@ -8,7 +8,7 @@ export const follow = (id) => ({ type: FOLLOW, usersId: id });
 
 export const unfollow = (id) => ({ type: UNFOLLOW, usersId: id });
 
-export const setUsers = (users) => ({ type: SET_USERS, usersId: users });
+export const setUsers = (users) => ({ type: SET_USERS, users });
 
 export const setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage });
 
@@ -25,7 +25,8 @@ let initialState = {
 const usersReducer = (state = initialState, action) => {
 
     switch (action.type) {
-        case FOLLOW: {
+
+        case FOLLOW:
             return {
                 ...state,
                 users: state.users.map(u => {
@@ -35,9 +36,9 @@ const usersReducer = (state = initialState, action) => {
                     return u;
                 })
             }
-        }
 
-        case UNFOLLOW: {
+
+        case UNFOLLOW:
             return {
                 ...state,
                 users: state.users.map(u => {
@@ -47,10 +48,12 @@ const usersReducer = (state = initialState, action) => {
                     return u;
                 })
             }
-        }
+
+
+
 
         case SET_USERS: {
-            return { ...state, users: [...action.usersId] }
+            return { ...state, users: [...action.users] }
         }
 
         case SET_CURRENT_PAGE: {

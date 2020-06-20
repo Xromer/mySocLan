@@ -1,8 +1,10 @@
 import React from 'react';
 import classes from './../Profile.module.css';
+import lamp_on from './img/lamp_on.jpg';
+import lamp_off from './img/Lamp_off.jpg';
 
 const ProfileInfo = (props) => {
-
+    debugger;
     if (!props.profile) {
         return <div>Fuck</div>
     }
@@ -24,6 +26,13 @@ const ProfileInfo = (props) => {
                 </div>
                 <div>
                     {props.profile.aboutMe}
+                </div>
+                <div>
+                    {props.lamp
+                        ? <button onClick={() => { props.lampOffAC() }}> <img src={lamp_off} /></button>
+                        : <button onClick={() => { props.lampOnAC() }}> <img src={lamp_on} /></button>
+
+                    }
                 </div>
             </div>
         </div>

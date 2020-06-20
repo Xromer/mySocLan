@@ -5,7 +5,7 @@ const Posts = (props) => {
 
 
 
-    let PostsItem = props.profilePage.posts.map(p => <div>{p.post}</div>);
+    let PostsItem = props.profilePage.posts.map(p => <div key={p.id}>{p.post}</div>);
 
     let nPostElement = React.createRef();
 
