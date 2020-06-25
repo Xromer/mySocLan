@@ -9,6 +9,7 @@ import NewsContainer from './components/news/newsContainer';
 import UsersContainer from './components/users/usersContainer';
 import ProfileContainer from './components/profile/profileContainer';
 import HeaderContainer from './components/header/headerContainer';
+import Login from './components/login/login';
 
 
 const App = (props) => {
@@ -31,6 +32,7 @@ const App = (props) => {
         <Route path="/users" component={() => <UsersContainer />} />
         <Route path="/music" component={Music} />
         <Route path="/settings" component={Settings} />
+        <Route path="/login" component={Login} />
 
       </div>
     </BrowserRouter>

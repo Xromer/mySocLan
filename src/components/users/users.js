@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './users.module.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 
 
 
@@ -14,7 +14,7 @@ let Users = (props) => {
         pages.push(i);
     };
 
-
+    if (!props.isAuth) return <Redirect to={'/login'} />
 
 
     return <div>

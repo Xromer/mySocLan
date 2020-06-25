@@ -2,15 +2,17 @@ import React from 'react';
 import classes from './../Profile.module.css';
 import lamp_on from './img/lamp_on.jpg';
 import lamp_off from './img/Lamp_off.jpg';
+import { Redirect } from 'react-router-dom';
 
 const ProfileInfo = (props) => {
-    debugger;
+
     if (!props.profile) {
         return <div>Fuck</div>
     }
-
+    if (!props.isAuth) return <Redirect to={'/login'} />
 
     return (
+
         <div className={classes.profile}>
             <div className={classes.myphoto}>
 
