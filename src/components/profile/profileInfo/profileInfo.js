@@ -9,7 +9,7 @@ const ProfileInfo = (props) => {
     if (!props.profile) {
         return <div>Fuck</div>
     }
-    if (!props.isAuth) return <Redirect to={'/login'} />
+    // if (!props.isAuth) return <Redirect to={'/login'} />
 
     return (
 

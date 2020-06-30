@@ -3,6 +3,7 @@ import Profile from './Profile';
 import { connect } from 'react-redux';
 import { getUserProfile, lampOnAC, lampOffAC } from '../../redux/profile-reducer';
 import { withRouter } from 'react-router-dom';
+import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 
 
 
@@ -23,10 +24,12 @@ class ProfileContainer extends React.Component {
 
   render() {
     return (
-      <Profile {...this.props} profile={this.props.profile} lamp={this.props.lamp} isAuth={this.props.isAuth} />
+      <Profile {...this.props} profile={this.props.profile} lamp={this.props.lamp} />
     );
   }
 }
+
+let AuthRedirectComponent = withAuthRedirect(ProfileContainer);
 
 
 
@@ -36,6 +39,6 @@ let mapStateToProps = (state) => ({
   isAuth: state.auth.isAuth,
 })
 
-let NewUrl = withRouter(ProfileContainer);
+let NewUrlDCC = withRouter(AuthRedirectComponent);
 
-export default connect(mapStateToProps, { getUserProfile, lampOnAC, lampOffAC })(NewUrl);
+export default connect(mapStateToProps, { getUserProfile, lampOnAC, lampOffAC })(NewUrlDCC);

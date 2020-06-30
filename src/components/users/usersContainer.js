@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers } from '../../redux/users-reducer';
 import Users from './users';
+import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 //import { usersAPI } from '../../api/api';
 
 
@@ -37,7 +38,7 @@ class UsersContainer extends React.Component {
     }
 }
 
-//export default UsersContainer;
+let AuthRedirectComponent = withAuthRedirect(UsersContainer);
 
 let mapStateToProps = (state) => {
     return {
@@ -74,4 +75,4 @@ let mapStateToProps = (state) => {
 //vmesto mapDispatchToProps bil peredan obekt s metodami
 export default connect(mapStateToProps, {
     follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers
-})(UsersContainer);
+})(AuthRedirectComponent);
