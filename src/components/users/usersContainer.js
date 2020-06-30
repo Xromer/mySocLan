@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers } from '../../redux/users-reducer';
 import Users from './users';
 import { withAuthRedirect } from '../../hoc/withAuthRedirect';
+import { compose } from 'redux';
 //import { usersAPI } from '../../api/api';
 
 
@@ -38,7 +39,7 @@ class UsersContainer extends React.Component {
     }
 }
 
-let AuthRedirectComponent = withAuthRedirect(UsersContainer);
+
 
 let mapStateToProps = (state) => {
     return {
@@ -47,7 +48,7 @@ let mapStateToProps = (state) => {
         totalUsersCount: state.usersPage.totalUsersCount,
         currentPage: state.usersPage.currentPage,
         followingInProgress: state.usersPage.followingInProgress,
-        isAuth: state.auth.isAuth,
+
     }
 }
 
@@ -72,7 +73,16 @@ let mapStateToProps = (state) => {
     }
 }*/
 
+
+
+
+/*let AuthRedirectComponent = withAuthRedirect(UsersContainer);
 //vmesto mapDispatchToProps bil peredan obekt s metodami
 export default connect(mapStateToProps, {
     follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers
-})(AuthRedirectComponent);
+})(AuthRedirectComponent);*/ //COMPOSE
+
+export default compose(
+    connect(mapStateToProps, { follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers }),
+    withAuthRedirect
+)(UsersContainer)

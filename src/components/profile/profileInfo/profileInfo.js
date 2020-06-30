@@ -1,8 +1,6 @@
 import React from 'react';
 import classes from './../Profile.module.css';
-import lamp_on from './img/lamp_on.jpg';
-import lamp_off from './img/Lamp_off.jpg';
-import { Redirect } from 'react-router-dom';
+
 
 const ProfileInfo = (props) => {
 
@@ -29,13 +27,7 @@ const ProfileInfo = (props) => {
                 <div>
                     {props.profile.aboutMe}
                 </div>
-                <div>
-                    {props.lamp
-                        ? <button onClick={() => { props.lampOffAC() }}> <img src={lamp_off} /></button>
-                        : <button onClick={() => { props.lampOnAC() }}> <img src={lamp_on} /></button>
 
-                    }
-                </div>
             </div>
         </div>
     )

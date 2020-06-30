@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './users.module.css';
-import { NavLink, Redirect } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -14,7 +14,7 @@ let Users = (props) => {
         pages.push(i);
     };
 
-    //if (!props.isAuth) return <Redirect to={'/login'} />
+
 
 
     return <div>
@@ -37,7 +37,7 @@ let Users = (props) => {
                 <div className={styles.but}>
                     {u.followed
                         ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
-                            // props.toggleFollowingProgress(true, u.id);
+
                             props.unfollow(u.id);
                             /*usersAPI.unfollowAx(u.id).then(data => {//axios zapros vinisen v api
                                 if (data.resultCode == 0) {
@@ -49,7 +49,6 @@ let Users = (props) => {
                         }}>Unfollow</button>
 
                         : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
-                            // props.toggleFollowingProgress(true, u.id);
                             props.follow(u.id);
                             /*usersAPI.followAx(u.id).then(data => {//axios zapros vinisen v api
                                 if (data.resultCode == 0) {

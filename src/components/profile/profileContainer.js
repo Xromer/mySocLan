@@ -1,9 +1,10 @@
 import React from 'react';
 import Profile from './Profile';
 import { connect } from 'react-redux';
-import { getUserProfile, lampOnAC, lampOffAC } from '../../redux/profile-reducer';
+import { getUserProfile } from '../../redux/profile-reducer';
 import { withRouter } from 'react-router-dom';
 import { withAuthRedirect } from '../../hoc/withAuthRedirect';
+import { compose } from 'redux';
 
 
 
@@ -24,21 +25,24 @@ class ProfileContainer extends React.Component {
 
   render() {
     return (
-      <Profile {...this.props} profile={this.props.profile} lamp={this.props.lamp} />
+      <Profile {...this.props} profile={this.props.profile} />
     );
   }
 }
 
-let AuthRedirectComponent = withAuthRedirect(ProfileContainer);
-
-
-
 let mapStateToProps = (state) => ({
   profile: state.profilePage.profile,
-  lamp: state.profilePage.lamp,
-  isAuth: state.auth.isAuth,
+
 })
+
+/*let AuthRedirectComponent = withAuthRedirect(ProfileContainer);
 
 let NewUrlDCC = withRouter(AuthRedirectComponent);
 
-export default connect(mapStateToProps, { getUserProfile, lampOnAC, lampOffAC })(NewUrlDCC);
+export default connect(mapStateToProps, { getUserProfile })(NewUrlDCC);*/ //composew
+
+export default compose(
+  connect(mapStateToProps, { getUserProfile }),
+  withRouter,
+  withAuthRedirect
+)(ProfileContainer)

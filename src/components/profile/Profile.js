@@ -12,7 +12,7 @@ const Profile = (props) => {
 
   return (
     <div className={classes.content}>
-      <ProfileInfo profile={props.profile} lamp={props.lamp} lampOnAC={props.lampOnAC} lampOffAC={props.lampOffAC} isAuth={props.isAuth} />
+      <ProfileInfo profile={props.profile} isAuth={props.isAuth} />
       <hr></hr>
       <PostsContainer />
     </div>

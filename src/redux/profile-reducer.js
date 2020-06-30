@@ -3,8 +3,7 @@ import { usersAPI } from '../api/api'
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
-const LAMP_ON = 'LAMP_ON';
-const LAMP_OFF = 'LAMP_OFF';
+
 
 
 export const ADD_PostActionCreator = () => ({ type: ADD_POST });
@@ -20,9 +19,6 @@ export const getUserProfile = (userId) => (dispatch) => {
     });
 }
 
-export const lampOnAC = () => ({ type: LAMP_ON })
-
-export const lampOffAC = () => ({ type: LAMP_OFF })
 
 let initialState = {
     posts: [
@@ -31,8 +27,8 @@ let initialState = {
         { id: 3, post: 'post  3' }
     ],
     newPostText: '',
-    profile: null,
-    lamp: true
+    profile: null
+
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -61,13 +57,6 @@ const profileReducer = (state = initialState, action) => {
             return { ...state, profile: action.profile }
         }
 
-        case LAMP_ON: {
-            return { ...state, lamp: true }
-        }
-
-        case LAMP_OFF: {
-            return { ...state, lamp: false }
-        }
         default:
             return state;
 
