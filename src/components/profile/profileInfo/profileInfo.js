@@ -30,7 +30,7 @@ const ProfileInfo = (props) => {
                 </div>
 
             </div>
-            <ProfileStatus status="Hello" />
+            <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
         </div>
     )
 }
