@@ -45,8 +45,9 @@ let initialState = {
         { id: 3, post: 'post  3' }
     ],
     newPostText: '',
+    status: " ",
     profile: null,
-    status: ""
+
 
 };
 
