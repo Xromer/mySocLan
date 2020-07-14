@@ -3,8 +3,8 @@ import Profile from './Profile';
 import { connect } from 'react-redux';
 import { getUserProfile, getStatus, updateStatus } from '../../redux/profile-reducer';
 import { withRouter } from 'react-router-dom';
-
 import { compose } from 'redux';
+import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 
 
 
@@ -47,5 +47,5 @@ export default connect(mapStateToProps, { getUserProfile })(NewUrlDCC);*/ //comp
 export default compose(
   connect(mapStateToProps, { getUserProfile, getStatus, updateStatus }),
   withRouter,
-  //withAuthRedirect
+  withAuthRedirect
 )(ProfileContainer)
